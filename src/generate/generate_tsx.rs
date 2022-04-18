@@ -22,9 +22,9 @@ pub fn wrapper(function_name: String, complete: String) -> String {
 pub fn title(head: String, classname: String) -> String {
     return format!(
         r#"
-        <div>
-            <h1 className={{"{}"}}>{}</h1>
-        </div>
+                <div>
+                    <h1 className={{"{}"}}>{}</h1>
+                </div>
     "#,
         classname, head
     );
@@ -33,9 +33,9 @@ pub fn title(head: String, classname: String) -> String {
 pub fn divwrap(classname: String, code: String) -> String {
     return format!(
         r#"
-        <div className={{"{}"}}>
-            {}
-        </div>
+                <div className={{"{}"}}>
+                    {}
+                </div>
     "#,
         classname, code
     )
@@ -49,6 +49,24 @@ pub fn tag_wrap(tag: String, classname: String, value: String) -> String {
     "#,
         tag, classname, value, tag
     );
+}
+
+pub fn boldwrap(value: String) -> String {
+    return format!(
+        r#"
+            <b>{}</b>
+        "#,
+        value
+    )
+}
+
+pub fn emwrap(value: String) -> String {
+    return format!(
+        r#"
+            <b>{}</b>
+        "#,
+        value
+    )
 }
 
 pub fn add_css_tag(classname: String, classbody: String) -> String {

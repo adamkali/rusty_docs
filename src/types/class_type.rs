@@ -1,4 +1,4 @@
-use super::doc_type{FuncType, FuncTypeParam, Params};
+use crate::types::doc_type::{FuncType, FuncTypeParam, Params};
 use crate::generate::generate_tsx as gtsx;
 use serde::{Deserialize, Serialize};
 
@@ -40,7 +40,7 @@ impl gtsx::GenerateTsx for ClassType {
             }
         }
         return gtsx::divwrap("",
-            &gtsx::tag_wrap("b", "" self.class_name )
+            &gtsx::tag_wrap("b", "", self.class_name )
             + &gtsx::tag_wrap("em","",self.description)
             + &params_string + &methods_string
         )
